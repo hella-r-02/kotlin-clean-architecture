@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.clean.R
 import com.example.clean.data.repository.UserRepositoryImpl
-import com.example.clean.data.storage.UserStorage
 import com.example.clean.data.storage.sharedprefs.SharedPrefUserStorage
 import com.example.clean.domain.models.SaveUserNameParam
 import com.example.clean.domain.models.UserName
