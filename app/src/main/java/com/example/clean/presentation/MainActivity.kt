@@ -8,11 +8,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.example.clean.R
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var vm: MainViewModel
+    private val vm: MainViewModel by viewModel<MainViewModel>()
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,10 +20,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Log.e("AAA", "Activity created")
-        vm = ViewModelProvider(
-            this,
-            MainViewModelFactory(this)
-        ).get(MainViewModel::class.java) //чтобы ViewModel не пересоздавалось
 
         val dataTextView = findViewById<TextView>(R.id.dataTextView)
         val dataEditView = findViewById<EditText>(R.id.dataEditText)
